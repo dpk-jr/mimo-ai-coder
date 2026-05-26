@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="476" font-family="monospace" font-size="13">
+<rect width="700" height="476" fill="#1e1e2e" rx="8"/>
+<rect width="700" height="28" fill="#cba6f7" opacity="0.3" rx="8"/>
+<text x="15" y="18" fill="#cba6f7" font-size="12" font-weight="bold">● MiMo AI Coder</text>
+<text x="15" y="45" fill="#cba6f7" font-size="12">$ python main.py refactor src/utils.py --action extract-method --lines 15-30</text>
+<text x="15" y="63" fill="#888" font-size="12"></text>
+<text x="15" y="81" fill="#cdd6f4" font-size="12">🔧 Refactoring utils.py — extract-method</text>
+<text x="15" y="99" fill="#888" font-size="12"></text>
+<text x="15" y="117" fill="#ff4444" font-size="12">--- a/src/utils.py</text>
+<text x="15" y="135" fill="#00ff88" font-size="12">+++ b/src/utils.py</text>
+<text x="15" y="153" fill="#888" font-size="12">@@ -15,16 +15,8 @@</text>
+<text x="15" y="171" fill="#ff4444" font-size="12">-def process_data(raw):</text>
+<text x="15" y="189" fill="#ff4444" font-size="12">-    # validation</text>
+<text x="15" y="207" fill="#ff4444" font-size="12">-    if not raw:</text>
+<text x="15" y="225" fill="#ff4444" font-size="12">-        raise ValueError('empty')</text>
+<text x="15" y="243" fill="#ff4444" font-size="12">-    if not isinstance(raw, dict):</text>
+<text x="15" y="261" fill="#ff4444" font-size="12">-        raise TypeError('expected dict')</text>
+<text x="15" y="279" fill="#ff4444" font-size="12">-    # processing</text>
+<text x="15" y="297" fill="#ff4444" font-size="12">-    result = transform(raw)</text>
+<text x="15" y="315" fill="#00ff88" font-size="12">+def process_data(raw):</text>
+<text x="15" y="333" fill="#00ff88" font-size="12">+    validated = validate_input(raw)</text>
+<text x="15" y="351" fill="#00ff88" font-size="12">+    return transform(validated)</text>
+<text x="15" y="369" fill="#888" font-size="12"></text>
+<text x="15" y="387" fill="#00ff88" font-size="12">✅ Extracted validate_input() method</text>
+<text x="15" y="405" fill="#00ff88" font-size="12">✅ Reduced cyclomatic complexity: 14 → 6</text>
+<text x="15" y="423" fill="#00ff88" font-size="12">✅ Added type hints to new method</text>
+</svg>
